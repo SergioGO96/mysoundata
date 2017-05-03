@@ -6,7 +6,7 @@ import os
 
 url_base = 'http://www.omdbapi.com/?t='
 
-pelicula= raw_input("pelicula: ")
+pelicula= raw_input("Introduce una pelicula a mostrar: ")
 
 r= requests.get(url_base+pelicula)
 doc = r.json()
