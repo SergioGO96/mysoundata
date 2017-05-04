@@ -1,0 +1,5 @@
+appdirs
+bottle
+lxml
+packaging
+requests
