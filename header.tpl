@@ -3,7 +3,7 @@
 <head>
 <title>MySoundData</title>
 <meta charset="iso-8859-1">
-<link rel="stylesheet" href="/black_white/style/style.css" type="text/css">
+<link rel="stylesheet" href="/style.css" type="text/css">
 <!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
 </head>
 <body>
