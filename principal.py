@@ -17,7 +17,7 @@ def inicio():
 	r= requests.get(url_base+pelicula)
 	doc = r.json()
 	if doc["Response"] == "False":
-		error = "ERROR"
+		return template('NoExiste.tpl')
 	else:
 		titulo = doc["Title"]
 		estreno = doc["Released"]
