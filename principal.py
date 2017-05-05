@@ -32,7 +32,10 @@ def inicio():
 		web = doc["Website"]
 		valoracion = doc["imdbRating"]
 		recaudacion = doc["BoxOffice"]
-		poster = doc["Poster"]
+		if doc["Poster"] != " ":
+			poster = doc["Poster"]
+		else:
+			poster="http://alvaropicho.com/images/imagen-encontrada-alvaro-picho.jpg"
 	return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,Produccion=Produccion,web=web,valoracion=valoracion,recaudacion=recaudacion,poster=poster)
 
 @route('/static/<filepath:path>')
