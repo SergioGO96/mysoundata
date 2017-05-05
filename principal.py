@@ -34,4 +34,8 @@ def inicio():
 		recaudacion = doc["BoxOffice"]
 	return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,Produccion=Produccion,web=web,valoracion=valoracion,recaudacion=recaudacion)
 
+@route('/static/<filepath:path>')
+def server_static(filepath):
+        return static_file(filepath, root='static') 
+
 run(host='0.0.0.0',port=argv[1])
