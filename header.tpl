@@ -10,7 +10,7 @@
 <div class="wrapper row1">
 	<header id="header" class="clear">
 		<div id="hgroup">
-			<h1><a>MySoundData</a></h1>
+			<h1><a>MySounData</a></h1>
 			<h2><a>Buscador de datos de peliculas</a></h2>
 		</div>
     		<nav>
