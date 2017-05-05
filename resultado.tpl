@@ -12,4 +12,4 @@
 <p>Web: {{web}}</p>
 <p>Valoracion: {{valoracion}}</p>
 <p>Recaudacion: {{recaudacion}}</p>
-<a href="/"><img src=poster/></a>
+<a href="/"><img src={{poster}}/></a>
