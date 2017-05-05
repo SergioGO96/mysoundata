@@ -1,14 +1,14 @@
 %include('header.tpl')
 <p>Titulo: {{titulo}}</p>
-<p>estreno: {{estreno}}</p>
-<p>calificacion: {{calificacion}}</p>
-<p>duracion: {{duracion}}</p>
-<p>genero: {{genero}}</p>
-<p>director: {{director}}</p>
-<p>guionistas: {{guionistas}}
-<p>actores: {{actores}}</p>
-<p>pais: {{pais}}</p>
+<p>Estreno: {{estreno}}</p>
+<p>Calificacion: {{calificacion}}</p>
+<p>Duracion: {{duracion}}</p>
+<p>Genero: {{genero}}</p>
+<p>Director: {{director}}</p>
+<p>Guionistas: {{guionistas}}
+<p>Actores: {{actores}}</p>
+<p>Pais: {{pais}}</p>
 <p>Produccion: {{Produccion}}</p>
-<p>web: {{web}}</p>
-<p>valoracion: {{valoracion}}</p>
-<p>recaudacion: {{recaudacion}}</p>
+<p>Web: {{web}}</p>
+<p>Valoracion: {{valoracion}}</p>
+<p>Recaudacion: {{recaudacion}}</p>
