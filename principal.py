@@ -32,7 +32,7 @@ def inicio():
 		web = doc["Website"]
 		valoracion = doc["imdbRating"]
 		recaudacion = doc["BoxOffice"]
-		if doc["Poster"] != " ":
+		if "Poster" in doc:
 			poster = doc["Poster"]
 		else:
 			poster="http://alvaropicho.com/images/imagen-encontrada-alvaro-picho.jpg"
