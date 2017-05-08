@@ -13,4 +13,4 @@
 <p>Web: {{web}}</p>
 <p>Valoracion: {{valoracion}}</p>
 <p>Recaudacion: {{recaudacion}}</p>
-
+%include('foot.tpl')
