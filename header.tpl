@@ -18,9 +18,9 @@
 				<nav class="left">
 					<a href="#menu"><span>Menu</span></a>
 				</nav>
-				<a href="index.html" class="logo">MySounData</a>
+				<a href="/" class="logo">MySounData</a>
 				<nav class="right">
-					<a href="#" class="button alt">Log in</a>
+					<a href="/login" class="button alt">Log in en Spotify</a>
 				</nav>
 			</header>
 
