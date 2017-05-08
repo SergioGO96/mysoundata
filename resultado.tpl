@@ -11,6 +11,6 @@
 <p>Pais: {{pais}}</p>
 <p>Valoracion: {{valoracion}}</p>
 <nav class="right">
-  <a href="/login" class="button alt">Log in en Spotify</a>
+  <a href="/login" class="button alt">Acceder a la lista de reproduccion</a>
 </nav>
 %include('foot.tpl')
