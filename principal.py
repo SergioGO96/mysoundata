@@ -13,7 +13,20 @@ client_id='d9afcb301391465dbc1ea87d231c4dcc'
 client_secret='7657feabd24541688c96c08c6c9098b6'
 token_url = "https://accounts.spotify.com/api/token"
 redirect_uri = 'http://mysoundata.herokuapp.com/callback'
+scope = ['playlist-read-private', 'playlist-read-collaborative']
 
+def token_valido():
+  token=request.get_cookie("token", secret='some-secret-key')
+  if token:
+    token_ok = True
+    try:
+      oauth2 = OAuth2Session(client_id, token=token)
+      r = oauth2.get('https://www.googleapis.com/oauth2/v1/userinfo')
+    except TokenExpiredError as e:
+      token_ok = False
+  else:
+    token_ok = False
+  return token_ok
 
 @route('/', method="get")
 def formularioinicio():
