@@ -10,4 +10,7 @@
 <p>Actores: {{actores}}</p>
 <p>Pais: {{pais}}</p>
 <p>Valoracion: {{valoracion}}</p>
+<nav class="right">
+  <a href="/login" class="button alt">Log in en Spotify</a>
+</nav>
 %include('foot.tpl')
