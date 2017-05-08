@@ -13,6 +13,20 @@ client_id='d9afcb301391465dbc1ea87d231c4dcc'
 client_secret='7657feabd24541688c96c08c6c9098b6'
 token_url = "https://accounts.spotify.com/api/token"
 
+
+def token_valido():
+  token=request.get_cookie("token", secret='some-secret-key')
+  if token:
+    token_ok = True
+    try:
+      oauth2 = OAuth2Session(client_id, token=token)
+      r = oauth2.get('https://www.googleapis.com/oauth2/v1/userinfo')
+    except TokenExpiredError as e:
+      token_ok = False
+  else:
+    token_ok = False
+  return token_ok
+
 @route('/', method="get")
 def formularioinicio():
 	return template('formularioinicio.tpl')
@@ -42,18 +56,6 @@ def inicio():
 			poster = doc["Poster"]
 			return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
 		
-def token_valido():
-	token=request.get_cookie("token", secret='some-secret-key')
-  	if token:
-   		 token_ok = True
-   		try:
-      			oauth2 = OAuth2Session(client_id, token=token)
-      			r = oauth2.get('https://www.googleapis.com/oauth2/v1/userinfo')
-      		except TokenExpiredError as e:
-      			token_ok = False
-  	else:
-   		token_ok = False
-  	return token_ok
 @get('/login')
 def LOGIN():
 	if token_valido():
