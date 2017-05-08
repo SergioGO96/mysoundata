@@ -69,7 +69,7 @@ def LOGIN():
     		response.set_cookie("oauth_state", state)
     		redirect(authorization_url)
 
-@get('/callback_spotify')
+@get('/callback')
 def get_token():
   	oauth2 = OAuth2Session(client_id, state=request.cookies.oauth_state,redirect_uri=redirect_uri)
   	token = oauth2.fetch_token(token_url, client_secret=client_secret,authorization_response=request.url)
