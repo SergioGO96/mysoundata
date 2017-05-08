@@ -60,7 +60,7 @@ def inicio():
 @get('/login')
 def LOGIN():
 	if token_valido():
-    		redirect("/listas")
+    		redirect("/")
  	else:
     		response.set_cookie("token", '',max_age=0)
     		oauth2 = OAuth2Session(client_id, redirect_uri=redirect_uri,scope=scope)
