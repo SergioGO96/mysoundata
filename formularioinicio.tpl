@@ -4,3 +4,4 @@
       <INPUT type="text" name="pelicula">
       <INPUT type="submit" value="Buscar">
 </form>
+%include('foot.tpl')
