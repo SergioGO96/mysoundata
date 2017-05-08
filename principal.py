@@ -35,7 +35,18 @@ def inicio():
 		else:
 			poster = doc["Poster"]
 			return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
+@get('/login')
+def LOGIN():
+	if token_valido():
+   		 redirect("/listas")
+  	else:
+    	response.set_cookie("token", '',max_age=0)
+    	oauth2 = OAuth2Session(client_id, redirect_uri=redirect_uri,scope=scope)
+   	authorization_url, state = oauth2.authorization_url('https://accounts.spotify.com/authorize/')
+   	response.set_cookie("oauth_state", state)
+   	redirect(authorization_url)
 
+		
 @route('/static/<filepath:path>')
 def server_static(filepath):
         return static_file(filepath, root='static') 
