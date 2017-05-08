@@ -9,7 +9,6 @@
 <p>Guionistas: {{guionistas}}
 <p>Actores: {{actores}}</p>
 <p>Pais: {{pais}}</p>
-<p>Produccion: {{Produccion}}</p>
 <p>Web: {{web}}</p>
 <p>Valoracion: {{valoracion}}</p>
 <p>Recaudacion: {{recaudacion}}</p>
