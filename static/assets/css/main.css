@@ -2479,6 +2479,11 @@
 			box-shadow: inset 0 0 0 1px #dee1e3;
 			color: #727a82 !important;
 		}
+		.button.alt2 {
+			background-color: #f6755e;
+			box-shadow: inset 0 0 0 1px #dee1e3;
+			color: #727a82 !important;
+		}
 
 			input[type="submit"].alt:hover,
 			input[type="reset"].alt:hover,
