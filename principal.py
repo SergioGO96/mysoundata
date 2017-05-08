@@ -12,6 +12,8 @@ url_base = 'http://www.omdbapi.com/?t='
 client_id='d9afcb301391465dbc1ea87d231c4dcc'
 client_secret='7657feabd24541688c96c08c6c9098b6'
 token_url = "https://accounts.spotify.com/api/token"
+redirect_uri = 'http://mysoundata.herokuapp.com/callback'
+scope = ['playlist-read-private', 'playlist-read-collaborative'
 
 
 def token_valido():
