@@ -18,7 +18,7 @@
 				<nav class="left">
 					<a href="#menu"><span>Menu</span></a>
 				</nav>
-				<a href="/"><img alt="logo" src="static/images/logo.png"/></a>
+				<a href="index.html" class="logo">MySunData</a>
 				<nav class="right">
 					<a href="#" class="button alt">Log in</a>
 				</nav>
