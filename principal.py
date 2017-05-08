@@ -29,13 +29,12 @@ def inicio():
 		actores = doc["Actors"]
 		pais = doc["Country"]
 		valoracion = doc["imdbRating"]
-		recaudacion = doc["BoxOffice"]
 		poster = doc["Poster"]
 		if doc["Poster"]=="N/A":
-			return template('resultadosin.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,recaudacion=recaudacion,poster=poster)
+			return template('resultadosin.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
 		else:
 			poster = doc["Poster"]
-			return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,recaudacion=recaudacion,poster=poster)
+			return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
