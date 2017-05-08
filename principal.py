@@ -82,7 +82,7 @@ def personal():
 @get('/logout')
 def salir():
 	response.set_cookie("token", '',max_age=0)
-    	redirect('/log')
+    	redirect('/login')
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
