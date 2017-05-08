@@ -10,5 +10,4 @@
 <p>Actores: {{actores}}</p>
 <p>Pais: {{pais}}</p>
 <p>Valoracion: {{valoracion}}</p>
-<p>Recaudacion: {{recaudacion}}</p>
 %include('foot.tpl')
