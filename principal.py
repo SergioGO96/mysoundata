@@ -60,7 +60,7 @@ def inicio():
 def LOGIN():
 	if token_valido():
     		redirect("/listas")
- 	 else:
+ 	else:
     		response.set_cookie("token", '',max_age=0)
     		oauth2 = OAuth2Session(client_id, redirect_uri=redirect_uri,scope=scope)
     		authorization_url, state = oauth2.authorization_url('https://accounts.spotify.com/authorize/')
