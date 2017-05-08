@@ -78,6 +78,11 @@ def get_token():
 @get('/principal')
 def personal():
 	return template('principal.tpl')
+
+@get('/logout')
+def salir():
+	response.set_cookie("token", '',max_age=0)
+    	redirect('/log'
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
