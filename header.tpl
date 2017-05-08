@@ -20,7 +20,7 @@
 				</nav>
 				<a href="index.html" class="logo">MySounData</a>
 				<nav class="right">
-					<a href="/login" class="button alt">Log in</a>
+					<a href="#" class="button alt">Log in</a>
 				</nav>
 			</header>
 
