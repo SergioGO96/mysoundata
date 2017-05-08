@@ -9,7 +9,6 @@
 <p>Guionistas: {{guionistas}}
 <p>Actores: {{actores}}</p>
 <p>Pais: {{pais}}</p>
-<p>Web: {{web}}</p>
 <p>Valoracion: {{valoracion}}</p>
 <p>Recaudacion: {{recaudacion}}</p>
 %include('foot.tpl')
