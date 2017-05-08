@@ -36,7 +36,7 @@ def inicio():
 			return template('resultadosin.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,Produccion=Produccion,web=web,valoracion=valoracion,recaudacion=recaudacion,poster=poster)
 		else:
 			poster = doc["Poster"]
-	return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,Produccion=Produccion,web=web,valoracion=valoracion,recaudacion=recaudacion,poster=poster)
+			return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,Produccion=Produccion,web=web,valoracion=valoracion,recaudacion=recaudacion,poster=poster)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
