@@ -89,7 +89,6 @@ def salir():
     	redirect('/login')
 	
 @route('/lista',method='POST')
-pelicula1 = request.forms.get('pelicula')
 token = request.get_cookie("token", secret='some-secret-key')
 	tokens = token["token_type"]+" "+token["access_token"]
 	headers = {"Accept":"aplication/json","Authorization":tokens}
