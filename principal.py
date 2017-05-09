@@ -85,18 +85,19 @@ def salir():
     	redirect('/login')
 	
 @route('/lista',method='POST')
-def listas():
-	url_lista = request.forms.get('nombre')
-	token = request.get_cookie("token", secret='some-secret-key')
+pelicula1 = request.forms.get('pelicula')
+token = request.get_cookie("token", secret='some-secret-key')
 	tokens = token["token_type"]+" "+token["access_token"]
 	headers = {"Accept":"aplication/json","Authorization":tokens}
-	canciones = requests.get(url_lista, headers=headers)
-	if canciones.status_code == 200:
-		canciones = canciones.json()
-		lista_canciones = []
-		for cancion in canciones['items']:
-			nombre_cancion = cancion["track"]["name"]+" - "+cancion["track"]["artists"][0]["name"]
-	return template('canciones.tpl',lista_canciones=lista_canciones)
+	perfil = requests.get("https://api.spotify.com/v1/me", headers=headers)
+	if perfil.status_code == 200:
+		cuenta = perfil.json()
+		cuenta = cuenta["id"]
+		url_playlists = "https://api.spotify.com/v1/search?q="+pelicula1+"&type=playlist&market=US"
+	listas = requests.get(url_playlists, headers=headers)
+	if listas.status_code == 200:
+		playlists_usuario = json.loads(listas.text)
+		return template('playlist.tpl', listas_usuario=playlists_usuario)
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
