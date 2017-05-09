@@ -89,7 +89,7 @@ def salir():
 	
 @route('/lista',method='GET')
 def list():
-	listas = request.forms.get(url_playlists)
+	listas = request.get(url_playlists)
 	if listas.status_code == 200:
 		playlists_usuario = json.loads(listas.text)
 	return template('playlist.tpl',listas=playlists_usuario)
