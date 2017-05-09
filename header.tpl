@@ -16,9 +16,6 @@
 
 		<!-- Header -->
 			<header id="header">
-				<nav class="left">
-					<a href="#menu"><span>Menu</span></a>
-				</nav>
 				<a href="/" class="logo">MySounData</a>
 				<a href="/" class="logo2">Tu base de datos de bandas sonoras</a>
 				<nav class="right">
