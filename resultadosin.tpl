@@ -10,6 +10,7 @@
 <p>Actores: {{actores}}</p>
 <p>Pais: {{pais}}</p>
 <p>Valoracion: {{valoracion}}</p>
+<p> {{url_playlists}</p>
 <nav class="right">
   <a href="/lista" class="button alt2">Acceder a la lista de reproduccion</a>
 </nav>
