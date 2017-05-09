@@ -89,14 +89,7 @@ def salir():
 	
 @route('/lista',method='GET')
 def list():
-	token = request.get_cookie("token", secret='some-secret-key')
-	tokens = token["token_type"]+" "+token["access_token"]
-	headers = {"Accept":"aplication/json","Authorization":tokens}
-	perfil = requests.get("https://api.spotify.com/v1/me", headers=headers)
-	if perfil.status_code == 200:
-		cuenta = perfil.json()
-		cuenta = cuenta["id"]
-	listas = requests.get(url_playlists, headers=headers)
+	listas = requests.get(url_playlists)
 	if listas.status_code == 200:
 		playlists_usuario = json.loads(listas.text)
 		print url_playlists
