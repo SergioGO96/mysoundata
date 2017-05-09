@@ -99,6 +99,7 @@ def list():
 	listas = requests.get(url_playlists, headers=headers)
 	if listas.status_code == 200:
 		playlists_usuario = json.loads(listas.text)
+		print url_playlists
 		return template('playlist.tpl', listas_usuario=playlists_usuario)
 		
 @route('/static/<filepath:path>')
