@@ -83,6 +83,20 @@ def personal():
 def salir():
 	response.set_cookie("token", '',max_age=0)
     	redirect('/login')
+	
+@route('/lista',method='POST')
+def listas():
+	url_lista = request.forms.get('nombre')
+	token = request.get_cookie("token", secret='some-secret-key')
+	tokens = token["token_type"]+" "+token["access_token"]
+	headers = {"Accept":"aplication/json","Authorization":tokens}
+	canciones = requests.get(url_lista, headers=headers)
+	if canciones.status_code == 200:
+		canciones = canciones.json()
+		lista_canciones = []
+		for cancion in canciones['items']:
+			nombre_cancion = cancion["track"]["name"]+" - "+cancion["track"]["artists"][0]["name"]
+	return template('canciones.tpl',lista_canciones=lista_canciones)
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
