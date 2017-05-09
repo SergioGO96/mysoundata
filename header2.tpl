@@ -7,6 +7,7 @@
 <html>
 	<head>
 		<title>MySounData</title>
+		<link rel="shortcut icon" type="image/x-icon" href="static/images/logo.png" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="static/assets/css/main.css" />
