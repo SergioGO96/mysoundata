@@ -5,7 +5,7 @@
         <article>
       		<h3> Tu lista </h3>
 		<ol>
-      		%for lista in listas_usuario['items']:
+      		%for lista in listas_usuario["items"]:
       	 		<li><a href="{{lista["external_urls"]["spotify"]}}" >{{lista["name"]}}</a></li>
       		 %end
 		 </ol>
