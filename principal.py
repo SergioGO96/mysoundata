@@ -14,7 +14,7 @@ client_secret='7657feabd24541688c96c08c6c9098b6'
 token_url = "https://accounts.spotify.com/api/token"
 redirect_uri = 'https://mysoundata.herokuapp.com/callback'
 scope = ['playlist-read-private', 'playlist-read-collaborative','playlist-modify-public']
-url_playlists = None
+
 
 
 def token_valido():
