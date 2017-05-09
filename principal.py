@@ -37,7 +37,7 @@ def formularioinicio():
 @route('/index',method="post")
 def inicio():
 	pelicula = request.forms.get('pelicula')
-	url_playlists = "https://api.spotify.com/v1/search?q="+pelicula+"&type=playlist&market=US"
+	url_playlists = "https://api.spotify.com/v1/search?q="+pelicula.replace(' ','+')+"&type=playlist&market=US"
 	r= requests.get(url_base+pelicula)
 	doc = r.json()
 	if doc["Response"] == "False":
