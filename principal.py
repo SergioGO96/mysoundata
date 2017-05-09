@@ -14,6 +14,8 @@ client_secret='7657feabd24541688c96c08c6c9098b6'
 token_url = "https://accounts.spotify.com/api/token"
 redirect_uri = 'https://mysoundata.herokuapp.com/callback'
 scope = ['playlist-read-private', 'playlist-read-collaborative','playlist-modify-public']
+url_playlists = None
+
 
 def token_valido():
   token=request.get_cookie("token", secret='some-secret-key')
@@ -35,6 +37,7 @@ def formularioinicio():
 @route('/index',method="post")
 def inicio():
 	pelicula = request.forms.get('pelicula')
+	global url_playlists = "https://api.spotify.com/v1/search?q="+pelicula+"&type=playlist&market=US"
 	r= requests.get(url_base+pelicula)
 	doc = r.json()
 	if doc["Response"] == "False":
@@ -93,7 +96,6 @@ token = request.get_cookie("token", secret='some-secret-key')
 	if perfil.status_code == 200:
 		cuenta = perfil.json()
 		cuenta = cuenta["id"]
-		url_playlists = "https://api.spotify.com/v1/search?q="+pelicula1+"&type=playlist&market=US"
 	listas = requests.get(url_playlists, headers=headers)
 	if listas.status_code == 200:
 		playlists_usuario = json.loads(listas.text)
