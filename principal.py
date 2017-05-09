@@ -94,13 +94,13 @@ def list():
 	tokens = token["token_type"]+" "+token["access_token"]
 	headers = {"Accept":"aplication/json","Authorization":tokens}
 	perfil = requests.get("https://api.spotify.com/v1/me", headers=headers)
-	if perfil.status_code == 200:
-		cuenta = perfil.json()
-		cuenta = cuenta["id"]
+	#if perfil.status_code == 200:
+	cuenta = perfil.json()
+	cuenta = cuenta["id"]
 	listas = requests.get(url_playlists, headers=headers)
-	if listas.status_code == 200:
-		playlists_usuario = json.loads(listas.text)
-		return template('playlist.tpl', listas_usuario=playlists_usuario)
+	#if listas.status_code == 200:
+	playlists_usuario = json.loads(listas.text)
+	return template('playlist.tpl', listas_usuario=playlists_usuario)
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
