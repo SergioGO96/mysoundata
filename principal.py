@@ -88,7 +88,7 @@ def salir():
 	response.set_cookie("token", '',max_age=0)
     	redirect('/login')
 	
-@route('/lista',method='POST')
+@route('/lista',method='GET')
 def list():
 	token = request.get_cookie("token", secret='some-secret-key')
 	tokens = token["token_type"]+" "+token["access_token"]
