@@ -92,7 +92,7 @@ def list():
 	listas = request.forms.get(url_playlists)
 	#if listas.status_code == 200:
 		#playlists_usuario = json.loads(listas.text)
-	return template('playlist.tpl',listas=listas)
+	return template('playlists.tpl',listas=listas)
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
