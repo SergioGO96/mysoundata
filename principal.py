@@ -55,10 +55,10 @@ def inicio():
 		valoracion = doc["imdbRating"]
 		poster = doc["Poster"]
 		if doc["Poster"]=="N/A":
-			return template('resultadosin.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
+			return template('resultadosin.tpl',url_playlists=url_playlists,titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
 		else:
 			poster = doc["Poster"]
-			return template('resultado.tpl',titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
+			return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
 		
 @get('/login')
 def LOGIN():
