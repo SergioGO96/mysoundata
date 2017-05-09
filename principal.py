@@ -14,7 +14,7 @@ client_secret='7657feabd24541688c96c08c6c9098b6'
 token_url = "https://accounts.spotify.com/api/token"
 redirect_uri = 'https://mysoundata.herokuapp.com/callback'
 scope = ['playlist-read-private', 'playlist-read-collaborative','playlist-modify-public']
-url_playlist = None
+url_playlist = ''
 
 
 def token_valido():
@@ -36,7 +36,6 @@ def formularioinicio():
 
 @route('/index',method="post")
 def inicio():
-	global url_playlist
 	pelicula = request.forms.get('pelicula')
 	url_playlists = "https://api.spotify.com/v1/search?q=guardians+of+the+galaxy&type=playlist&market=US"
 	r= requests.get(url_base+pelicula)
