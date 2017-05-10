@@ -83,7 +83,7 @@ def salir():
 	response.set_cookie("token", '',max_age=0)
     	redirect('/login')
 	
-@route('/lista/<url>',method='GET')
+@route('/lista/<url:path>',method='GET')
 def list(url):
 	listas = requests.get(url)
 	if listas.status_code == 200:
