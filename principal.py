@@ -86,9 +86,10 @@ def salir():
 @route('/lista/<url:path>',method='GET')
 def list(url):
 	listas = requests.get(url)
+	return url,listas.status_code,listas.url
 	if listas.status_code == 200:
 		playlists_usuario = json.loads(listas)
-	return template('playlist.tpl',listas=playlists_usuario)
+		return template('playlist.tpl',listas=playlists_usuario)
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
