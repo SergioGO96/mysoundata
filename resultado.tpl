@@ -16,6 +16,9 @@
 <p>Valoracion: {{valoracion}}</p>
 <p> {{url_playlists}}</p>
 <nav class="right">
-  <a href="/lista/{{url_playlists}}" class="button alt2">Acceder a la lista de reproduccion</a>
+<form action="/lista" method="post">
+<input type="hidden" name="url" value="url_playlists">
+<INPUT type="submit" value="Acceder a la lista de reproduccion">
+</form>
 </nav>
 %include('foot.tpl')
