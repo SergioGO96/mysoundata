@@ -85,6 +85,7 @@ def salir():
 	
 @route('/lista',method='POST')
 def list():
+	url= request.forms.get("url")
 	listas = requests.get(url)
 	return url,listas.status_code,listas.url
 	if listas.status_code == 200:

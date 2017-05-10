@@ -17,7 +17,7 @@
 <p> {{url_playlists}}</p>
 <nav class="right">
 <form action="/lista" method="post">
-<input type="hidden" name="url" value="url_playlists">
+<input type="hidden" name="url" value="{{!url_playlists}}">
 <INPUT type="submit" value="Acceder a la lista de reproduccion">
 </form>
 </nav>
