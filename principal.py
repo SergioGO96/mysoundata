@@ -14,7 +14,7 @@ client_secret='7657feabd24541688c96c08c6c9098b6'
 token_url = "https://accounts.spotify.com/api/token"
 redirect_uri = 'https://mysoundata.herokuapp.com/callback'
 scope = ['playlist-modify-public']
-url_playlists = ''
+
 
 
 def token_valido():
@@ -54,11 +54,7 @@ def inicio():
 		pais = doc["Country"]
 		valoracion = doc["imdbRating"]
 		poster = doc["Poster"]
-		if doc["Poster"]=="N/A":
-			return template('resultadosin.tpl',url_playlists=url_playlists,titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
-		else:
-			poster = doc["Poster"]
-			return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=poster)
+		return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=doc["Poster"])
 		
 @get('/login')
 def LOGIN():
@@ -87,9 +83,9 @@ def salir():
 	response.set_cookie("token", '',max_age=0)
     	redirect('/login')
 	
-@route('/lista',method='GET')
-def list():
-	listas = requests.get(url_playlists)
+@route('/lista/<url>',method='GET')
+def list(url):
+	listas = requests.get(url)
 	if listas.status_code == 200:
 		playlists_usuario = json.loads(listas)
 	return template('playlist.tpl',listas=playlists_usuario)
