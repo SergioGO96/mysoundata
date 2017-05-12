@@ -74,6 +74,10 @@ def get_token():
  	response.set_cookie("token", token,secret='some-secret-key')
   	redirect("/principal")
 	
+@get('/principal')
+def personal():
+	return template('principal.tpl')	
+	
 @route('/lista',method='POST')
 def list():
 	if token_valido():
