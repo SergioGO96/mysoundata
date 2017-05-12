@@ -6,7 +6,10 @@
       		<h3> Playlists </h3>
 		<ol>
       		%for a in listas["playlists"]["items"]:
-   			<li><a href="a.get("external_urls")"> a["name"]</a></li>
+			b = a.get["external_urls"]
+			c = a.get["name"]
+   			<!-- <li><a href="a"> b</a></li> -->
+			
       		 %end
 		 </ol>
 	</article>
