@@ -88,8 +88,14 @@ def list():
 	url= request.forms.get("url")
 	listas = requests.get(url)
 	if listas.status_code == 200:
-		playlists_usuario = listas.json()
-		return template('playlist.tpl',listas=playlists_usuario)
+		playlists = []
+		nombre = []
+		listas = listas.json()
+		for a in listas["playlists"]["items"]:
+			playlists.append(a.get("external_urls").encode("UTF-8"))
+			nombre.append(a.get("nombre").encode("UTF-8"))
+			
+		return template('playlist.tpl',playlists=playlists,nombre=nombre)
 		
 @route('/static/<filepath:path>')
 def server_static(filepath):
