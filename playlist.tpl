@@ -5,8 +5,8 @@
         <article>
       		<h3> Playlists </h3>
 		<ol>
-      		%for lista in listas["playlists"]:
-      	 		<li><a href="{{lista["items"]["external_urls"]["spotify"][0]}}" >{{lista["name"][0]}}</a></li>
+      		%for a in listas["playlists"]["items"]:
+   			<li><a href="a.get("external_urls")"> a["name"]</a></li>
       		 %end
 		 </ol>
 	</article>
