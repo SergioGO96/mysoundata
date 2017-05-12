@@ -73,25 +73,23 @@ def get_token():
   	token = oauth2.fetch_token(token_url, client_secret=client_secret,authorization_response=request.url)
  	response.set_cookie("token", token,secret='some-secret-key')
   	redirect("/principal")
-
-@get('/principal')
-def personal():
-	return template('principal.tpl')
 	
 @route('/lista',method='POST')
 def list():
-	url= request.forms.get("url")
-	listas = requests.get(url)
-	if listas.status_code == 200:
-		playlists = []
-		nombre = []
-		listas = listas.json()
-		for a in listas["playlists"]["items"]:
-			playlists.append(a.get("external_urls").get("spotify"))
-			nombre.append(a.get("name"))
-			
-		return template('playlist.tpl',playlists=playlists,nombre=nombre)
-		
+	if token_valido():
+		url= request.forms.get("url")
+		listas = requests.get(url)
+		if listas.status_code == 200:
+			playlists = []
+			nombre = []
+			listas = listas.json()
+			for a in listas["playlists"]["items"]:
+				playlists.append(a.get("external_urls").get("spotify"))
+				nombre.append(a.get("name"))
+
+			return template('playlist.tpl',playlists=playlists,nombre=nombre)
+	else:
+		redirect("/login")
 @route('/static/<filepath:path>')
 def server_static(filepath):
         return static_file(filepath, root='static') 
