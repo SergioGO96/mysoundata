@@ -92,8 +92,8 @@ def list():
 		nombre = []
 		listas = listas.json()
 		for a in listas["playlists"]["items"]:
-			playlists.append(a.get("external_urls"))
-			nombre.append(a.get("nombre"))
+			playlists.append(a.get("external_urls").get("spotify"))
+			nombre.append(a.get("name"))
 			
 		return template('playlist.tpl',playlists=playlists,nombre=nombre)
 		
