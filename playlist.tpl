@@ -5,8 +5,8 @@
         <article>
       		<h3> Playlists </h3>
 		<ol>
-      		%for a in listas["playlists"]["items"]:
-   			<li><a href="{{a.get('external_urls').encode('utf-8')}}"> {{a.get('name')}}</a></li>
+      		%for a,b in zip(playlists,nombre):
+   			<li><a href="{{a}}"> {{b}}</a></li>
 			
       		 %end
 		 </ol>
