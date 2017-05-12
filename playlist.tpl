@@ -6,7 +6,7 @@
       		<h3> Playlists </h3>
 		<ol>
       		%for a in listas["playlists"]["items"]:
-   			<li><a href="a.get("external_urls").encode("utf-8")> a.get("name")</a></li>
+   			<li><a href="a.get('external_urls').encode('utf-8')"> a.get('name')</a></li>
 			
       		 %end
 		 </ol>
