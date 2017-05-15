@@ -7,10 +7,11 @@ from requests_oauthlib import OAuth1
 from requests_oauthlib import OAuth2Session
 from oauthlib.oauth2 import TokenExpiredError
 import json
+import os
 
 url_base = 'http://www.omdbapi.com/?t='
-client_id='d9afcb301391465dbc1ea87d231c4dcc'
-client_secret='7657feabd24541688c96c08c6c9098b6'
+client_id= os.environ["client_id"]
+client_secret= os.environ["client_secret"]
 token_url = "https://accounts.spotify.com/api/token"
 redirect_uri = 'https://mysoundata.herokuapp.com/callback'
 scope = ['playlist-modify-public']
