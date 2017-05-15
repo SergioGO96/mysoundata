@@ -14,7 +14,6 @@
 <p>Actores: {{actores}}</p>
 <p>Pais: {{pais}}</p>
 <p>Valoracion: {{valoracion}}</p>
-<p> {{url_playlists}}</p>
 <nav class="right">
 <form action="/lista" method="post">
 <input type="hidden" name="url" value="{{!url_playlists}}">
