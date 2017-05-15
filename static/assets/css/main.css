@@ -17,6 +17,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		text-align: center;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -1681,6 +1682,7 @@
 
 	p {
 		margin: 0 0 2em 0;
+		text-align:center;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -1838,6 +1840,7 @@
 
 	form {
 		margin: 0 0 2em 0;
+		text-align: center;
 	}
 
 	label {
