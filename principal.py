@@ -54,7 +54,7 @@ def inicio():
 		valoracion = datos["vote_average"]
 		postersin = datos["poster_path"]
 		poster = "https://image.tmdb.org/t/p/w500"+postersin
-		return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,titulo2=titulo2,estreno=estreno,pais=pais,valoracion=valoracion,poster=poster)
+		return template('resultado.tpl',url_playlists=url_playlists,sinopsis=sinopsis,titulo=titulo,titulo2=titulo2,estreno=estreno,pais=pais,valoracion=valoracion,poster=poster)
 		
 @get('/login')
 def LOGIN():
