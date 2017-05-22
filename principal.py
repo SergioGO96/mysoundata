@@ -50,9 +50,9 @@ def inicio():
 		titulo2 = datos["original_title"]
 		estreno = datos["release_date"]
 		sinopsis = datos["overview"]
-		pais = doc["original_language"]
-		valoracion = doc["vote_average"]
-		postersin = doc["poster_path"]
+		pais = datos["original_language"]
+		valoracion = datos["vote_average"]
+		postersin = datos["poster_path"]
 		poster = "https://image.tmdb.org/t/p/w500"+postersin
 		return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,titulo2=titulo2,estreno=estreno,pais=pais,valoracion=valoracion,poster=poster)
 		
