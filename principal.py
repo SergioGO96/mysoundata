@@ -9,9 +9,10 @@ from oauthlib.oauth2 import TokenExpiredError
 import json
 import os
 
-url_base = 'http://www.omdbapi.com/?t='
+url_base = 'https://api.themoviedb.org/3'
 client_id= os.environ["client_id"]
 client_secret= os.environ["client_secret"]
+key = os.environ["key"]
 token_url = "https://accounts.spotify.com/api/token"
 redirect_uri = 'https://mysoundata.herokuapp.com/callback'
 scope = ['playlist-modify-public']
@@ -39,23 +40,20 @@ def formularioinicio():
 def inicio():
 	pelicula = request.forms.get('pelicula')
 	url_playlists = "https://api.spotify.com/v1/search?q="+pelicula.replace(' ','%20')+"&type=playlist&market=US"
-	r= requests.get(url_base+pelicula)
+	r= requests.get(url_base+"/search/movie?api_key="+key+"&language=es&query="+pelicula)
 	doc = r.json()
-	if doc["Response"] == "False":
+	if doc["totals_results"] == 0:
 		return template('NoExiste.tpl')
 	else:
-		titulo = doc["Title"]
-		estreno = doc["Released"]
-		calificacion = doc["Rated"]
-		duracion = doc["Runtime"]
-		genero = doc["Genre"]
-		director = doc["Director"]
-		guionistas = doc["Writer"]
-		actores = doc["Actors"]
-		pais = doc["Country"]
-		valoracion = doc["imdbRating"]
-		poster = doc["Poster"]
-		return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,estreno=estreno,calificacion=calificacion,duracion=duracion,genero=genero,director=director,guionistas=guionistas,actores=actores,pais=pais,valoracion=valoracion,poster=doc["Poster"])
+		datos = doc["results"][0]
+		titulo = datos["title"]
+		titulo2 = datos["original_title"]
+		estreno = datos["release_date"]
+		sinopsis = datos["overview"]
+		pais = doc["original_language"]
+		valoracion = doc["vote_average"]
+		poster = doc["poster_path"]
+		return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,titulo2=titulo2,estreno=estreno,pais=pais,valoracion=valoracion,poster=poster)
 		
 @get('/login')
 def LOGIN():
