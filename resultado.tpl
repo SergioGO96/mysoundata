@@ -3,6 +3,7 @@
 <p>Titulo Original: {{titulo2}}</p>
 % if poster!=" ":
 	<a href="/"><img src={{poster}}/></a>
+	<p>{{poster}}</p>
 %else:
 	<a href="/"><img src="/static/images/noposter.png"/></a>
 %end
