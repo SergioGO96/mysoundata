@@ -42,7 +42,7 @@ def inicio():
 	url_playlists = "https://api.spotify.com/v1/search?q="+pelicula.replace(' ','%20')+"&type=playlist&market=US"
 	r= requests.get(url_base+"/search/movie?api_key="+key+"&language=es&query="+pelicula)
 	doc = r.json()
-	if doc["totals_results"] == 0:
+	if doc["total_results"] == 0:
 		return template('NoExiste.tpl')
 	else:
 		datos = doc["results"][0]
