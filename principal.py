@@ -52,7 +52,8 @@ def inicio():
 		sinopsis = datos["overview"]
 		pais = doc["original_language"]
 		valoracion = doc["vote_average"]
-		poster = doc["poster_path"]
+		postersin = doc["poster_path"]
+		poster = "https://image.tmdb.org/t/p/w500"+postersin
 		return template('resultado.tpl',url_playlists=url_playlists,titulo=titulo,titulo2=titulo2,estreno=estreno,pais=pais,valoracion=valoracion,poster=poster)
 		
 @get('/login')
