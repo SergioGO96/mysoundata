@@ -1,19 +1,15 @@
 %include('header.tpl')
 <p>Titulo: {{titulo}}</p>
-% if poster!="N/A":
+<p>Titulo Original: {{titulo2}}</p>
+% if poster!=" ":
 	<a href="/"><img src={{poster}}/></a>
 %else:
 	<a href="/"><img src="/static/images/noposter.png"/></a>
 %end
 <p>Estreno: {{estreno}}</p>
-<p>Calificacion: {{calificacion}}</p>
-<p>Duracion: {{duracion}}</p>
-<p>Genero: {{genero}}</p>
-<p>Director: {{director}}</p>
-<p>Guionistas: {{guionistas}}
-<p>Actores: {{actores}}</p>
+<p>Calificacion: {{valoracion}}</p>
+<p>Sinopsis: {{sinopsis}}</p>
 <p>Pais: {{pais}}</p>
-<p>Valoracion: {{valoracion}}</p>
 <nav class="right">
 <form action="/lista" method="post">
 <input type="hidden" name="url" value="{{!url_playlists}}">
